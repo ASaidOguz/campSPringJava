@@ -1,30 +1,27 @@
 package kodlama.io.rentAcar.entities.concretes;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Table(name="brands")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+
 public class Brand {
+
+    @Id     //Primary key annotation.
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private int id;
+    @Column(name="name")
     private String Name;
 
-    public Brand() {
-    }
-
-    public Brand(int id, String name) {
-        this.id = id;
-        Name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
+   //Data getter ve setter dan oluşmaktadır...
+    // Bir çok getter setter ve constructor vardı ve yukardaki anotasyonlar
+    //vasıtasıyla silebidlik
 }

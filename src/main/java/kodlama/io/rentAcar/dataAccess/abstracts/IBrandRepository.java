@@ -3,15 +3,11 @@ package kodlama.io.rentAcar.dataAccess.abstracts;
 import java.util.List;
 
 import kodlama.io.rentAcar.entities.concretes.Brand;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface IBrandRepository {
+public interface IBrandRepository extends JpaRepository<Brand,Integer> {
 
-    List<Brand> getAll(); // get all brands
 
-    void add(Brand brand); // add brand
-
-    void update(Brand brand); // update brand
-
-    void delete(Brand brand); // delete brand
 }
 
+//BTK ileri Java kursu...
